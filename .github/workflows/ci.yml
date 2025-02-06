@@ -80,7 +80,7 @@ jobs:
     needs: sdk-windows
     strategy:
       matrix:
-        arch: [x86_64, amd64]
+        arch: [x86_64, arm64]
       fail-fast: false
     runs-on: windows-latest
     steps:
