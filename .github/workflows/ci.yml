@@ -15,7 +15,7 @@ jobs:
     needs: frida-windows
     strategy:
       matrix:
-        arch: [x86, x86_64]
+        arch: [amd64]
     runs-on: ubuntu-latest
     steps:
       - name: Check out repo
@@ -52,18 +52,13 @@ jobs:
         uses: ./.github/actions/package-artifact-file
         with:
           name: frida-clr-windows-${{ matrix.arch }}
-      - name: Package QML bindings
-        if: matrix.arch == 'x86_64'
-        uses: ./.github/actions/package-artifact-files-as-tarball
-        with:
-          name: frida-qml-windows-${{ matrix.arch }}
 
   package-windows-sfx:
     if: startsWith(github.ref, 'refs/tags/')
     needs: frida-windows
     strategy:
       matrix:
-        arch: [x86, x86_64]
+        arch: [arm64]
     runs-on: windows-latest
     steps:
       - name: Check out repo
@@ -85,7 +80,7 @@ jobs:
     needs: sdk-windows
     strategy:
       matrix:
-        arch: [x86, x86_64]
+        arch: [amd64]
       fail-fast: false
     runs-on: windows-latest
     steps:
