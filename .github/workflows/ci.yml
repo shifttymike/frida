@@ -8,6 +8,7 @@ env:
   NODE_TARGETS_FREEBSD: '20.0.0'
   ELECTRON_TARGETS_DEFAULT: '31.0.0'
   ELECTRON_TARGETS_FREEBSD: '30.0.0'
+  APPARENTLY_YOU_CANT_MANUALLY: 'trigger builds so here we are'
 
 jobs:
   package-windows:
