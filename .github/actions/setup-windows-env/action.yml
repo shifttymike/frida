@@ -3,7 +3,7 @@ description: Set up everything needed to build and release things on Windows
 inputs:
   architecture:
     description: The target architecture
-    default: x64
+    default: [x64, arm64]
 runs:
   using: composite
   steps:
