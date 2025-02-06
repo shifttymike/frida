@@ -15,7 +15,7 @@ jobs:
     needs: frida-windows
     strategy:
       matrix:
-        arch: [x86_64, arm64]
+        arch: [arm64]
     runs-on: ubuntu-latest
     steps:
       - name: Check out repo
@@ -58,7 +58,7 @@ jobs:
     needs: frida-windows
     strategy:
       matrix:
-        arch: [x86_64, arm64]
+        arch: [arm64]
     runs-on: windows-latest
     steps:
       - name: Check out repo
@@ -80,7 +80,7 @@ jobs:
     needs: sdk-windows
     strategy:
       matrix:
-        arch: [x86_64, arm64]
+        arch: [arm64]
       fail-fast: false
     runs-on: windows-latest
     steps:
@@ -245,7 +245,7 @@ jobs:
     runs-on: windows-latest
     strategy:
       matrix:
-        arch: [x86_64, arm64]
+        arch: [arm64]
       fail-fast: false
     steps:
       - name: Check out repo
@@ -259,7 +259,7 @@ jobs:
     needs: toolchain-windows
     strategy:
       matrix:
-        arch: [x86_64, arm64]
+        arch: [arm64]
         config: [md, mdd, mt, mtd]
       fail-fast: false
     runs-on: windows-latest
