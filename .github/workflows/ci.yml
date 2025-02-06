@@ -15,7 +15,7 @@ jobs:
     needs: frida-windows
     strategy:
       matrix:
-        arch: [amd64]
+        arch: [x86_64, amd64]
     runs-on: ubuntu-latest
     steps:
       - name: Check out repo
@@ -58,7 +58,7 @@ jobs:
     needs: frida-windows
     strategy:
       matrix:
-        arch: [arm64]
+        arch: [x86_64, arm64]
     runs-on: windows-latest
     steps:
       - name: Check out repo
@@ -80,7 +80,7 @@ jobs:
     needs: sdk-windows
     strategy:
       matrix:
-        arch: [amd64]
+        arch: [x86_64, amd64]
       fail-fast: false
     runs-on: windows-latest
     steps:
@@ -249,13 +249,13 @@ jobs:
       - name: Set up environment
         uses: ./.github/actions/setup-windows-env
       - name: Roll toolchain
-        run: python releng\deps.py roll toolchain windows-arm64
+        run: python releng\deps.py roll toolchain windows-${{ matrix.arch }}
 
   sdk-windows:
     needs: toolchain-windows
     strategy:
       matrix:
-        arch: [arm64]
+        arch: [x86_64, arm64]
         config: [md, mdd, mt, mtd]
       fail-fast: false
     runs-on: windows-latest
