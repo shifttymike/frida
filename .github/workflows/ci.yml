@@ -1696,7 +1696,7 @@ jobs:
     needs: toolchain-windows
     strategy:
       matrix:
-        arch: [x86, x86_64]
+        arch: [arm64]
         config: [md, mdd, mt, mtd]
       fail-fast: false
     runs-on: windows-latest
